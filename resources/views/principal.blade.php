@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo')
-    Pagina Principal
+   Devstagram
 @endsection
 
 @section('contenido')
