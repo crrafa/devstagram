@@ -13,7 +13,7 @@ export default defineConfig({
             host: 'localhost',
         },
         watch: {
-            usePolling: true
+            usePolling: false
         }
     },
 });
