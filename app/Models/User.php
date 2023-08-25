@@ -47,4 +47,20 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(Post::class);
     }
+
+    public function likes() {
+        return $this->hasMany(Like::class);
+    }
+
+    //Followers no usa convenciones de laravel
+    public function followers(){
+        return $this->belongsToMany(User::class,'followers','user_id','follower_id');
+    }
+    public function followings(){
+        return $this->belongsToMany(User::class,'followers','follower_id','user_id');
+    }
+
+    public function siguiendo(User $user) {
+        return $this->followers->contains($user->id);
+    }
 }
